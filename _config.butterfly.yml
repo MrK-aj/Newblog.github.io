@@ -109,8 +109,7 @@ footer:
     enable: true
     version: false
   custom_text: >-
-    <div class="footer-icp" style="margin-top:6px;font-size:13px"><svg viewBox="0 0 24 24" width="14" height="14" style="vertical-align:-2px;margin-right:4px" aria-hidden="true"><path fill="#b8860b"
-    d="M12 1.8 20 5v6.2c0 5.2-3.4 9.4-8 11.2-4.6-1.8-8-6-8-11.2V5l8-3.2z"/><path fill="#f5d76e" d="M12 5.2 13.5 9l4 .4-3 2.7.9 3.9L12 13.9 8.6 16l.9-3.9-3-2.7 4-.4L12 5.2z"/></svg><a
+    <div class="footer-icp" style="margin-top:6px;font-size:13px"><img src="/img/police_badge.png" alt="" width="16" height="16" style="vertical-align:-3px;margin-right:4px;display:inline-block"/><a
     href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">渝ICP备2025050714号</a></div>
 aside:
   enable: true
