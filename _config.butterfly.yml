@@ -108,9 +108,7 @@ footer:
   copyright:
     enable: true
     version: false
-  custom_text: >-
-    <div class="footer-icp" style="margin-top:6px;font-size:13px"><img src="/img/police_badge.png" alt="" width="16" height="16" style="vertical-align:-3px;margin-right:4px;display:inline-block"/><a
-    href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">渝ICP备2025050714号</a></div>
+  custom_text: <div class="footer-icp" style="margin-top:6px;font-size:13px"><img src="/img/police_badge.png" alt="" width="16" height="16" style="vertical-align:-3px;margin-right:4px;display:inline-block"/><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">渝ICP备2025050714号</a></div>
 aside:
   enable: true
   hide: false
@@ -486,8 +484,29 @@ structured_data:
   alternate_name: null
 css_prefix: true
 inject:
-  head: null
-  bottom: null
+  head:
+    - <link rel="stylesheet" href="/katex/katex.min.css">
+  bottom:
+    - <script defer src="/katex/katex.min.js"></script>
+    - <script defer src="/katex/contrib/auto-render.min.js"></script>
+    - |-
+      <script>
+      function renderMathAll() {
+        if (!window.renderMathInElement) return;
+        var target = document.getElementById('article-container') || document.body;
+        renderMathInElement(target, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\[', right: '\\]', display: true},
+            {left: '\\(', right: '\\)', display: false}
+          ],
+          throwOnError: false
+        });
+      }
+      document.addEventListener('DOMContentLoaded', renderMathAll);
+      document.addEventListener('pjax:complete', renderMathAll);
+      </script>
 CDN:
   internal_provider: local
   third_party_provider: jsdelivr
